@@ -5,7 +5,7 @@
 Adafruit_BME280 bme; // I2C
 
 // Sensorwerte
-#define LOCATION "Raum"
+#define LOCATION "Wohnzimmer"
 #define DEVICE "Sensor1"
 #define TEMP_Max 27
 #define TEMP_Min 14
@@ -33,7 +33,7 @@ void setup() {
   // WLAN Verbindung herstellen
   Serial.println("Connecting to WiFi");
   WiFi.mode(WIFI_STA);
-  WiFi.hostname("Relais-Baumhaus");
+  WiFi.hostname(LOCATION);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print("No Wifi");
@@ -84,12 +84,12 @@ void printValues() {
 //////////////////////////////////////////////////////////////////////////////
 
   // IF/Else Logik zur aktiven Steuerung
-  if (temperature >= 27){
+  if (temperature >= TEMP_Max){
     Serial.print("Temperatur zu hoch - Abluft EIN\n");
-    digitalWrite(D5, HIGH);}
-  else if (humidity >= 70){
+    digitalWrite(D5, HIGH);}    
+  else if (humidity >= HUM_Max){
     Serial.print("Luftfeuchtigkeit zu hoch - Abluft EIN\n");
-    digitalWrite(D5, HIGH);}
+    digitalWrite(D5, HIGH);}  
   else{
     Serial.print("Werte im Normbereich\n");
     digitalWrite(D5, LOW);}
@@ -115,8 +115,5 @@ void printValues() {
   pointDevice.addField("temperature", temperature);
   pointDevice.addField("humidity", humidity);
   pointDevice.addField("pressure", pressure);
-
   client.writePoint(pointDevice);
-
-  Serial.println(client.writePoint(pointDevice));
 }
