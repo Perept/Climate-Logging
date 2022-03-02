@@ -1,2 +1,4 @@
 NodeMCU Amica Modul V2 ESP8266 ESP-12F WiFi CP2102
 GY-BME280
+GY-BME680
+Moisture Sensor

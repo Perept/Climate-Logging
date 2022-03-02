@@ -5,20 +5,20 @@
 Adafruit_BME280 bme; // I2C
 
 // Sensorwerte
-#define LOCATION "Wohnzimmer"
+#define LOCATION "Garage"
 #define DEVICE "Sensor1"
 #define TEMP_Max 27
 #define TEMP_Min 14
 #define HUM_Max 70
 #define HUM_Min 50
-#define TIME 15000
+#define TIME 60000
 
 // WIFI
 #define WIFI_SSID "Deichert_IOT"
-#define WIFI_PASSWORD "PASSWORD"
+#define WIFI_PASSWORD "23plag773imp9x"
 
 // InfluxDB
-#define INFLUXDB_URL "http://ubuntu.deichert.de:8086"
+#define INFLUXDB_URL "http://grafana.deichert.de:8086"
 #define INFLUXDB_DB_NAME "klima"
 
 void setup() {
