@@ -13,7 +13,7 @@
 
 // WIFI
 #define WIFI_SSID "Deichert_IOT"
-#define WIFI_PASSWORD "23plag773imp9x"
+#define WIFI_PASSWORD "Password"
 
 // InfluxDB
 #define INFLUXDB_URL "http://grafana.deichert.de:8086"
