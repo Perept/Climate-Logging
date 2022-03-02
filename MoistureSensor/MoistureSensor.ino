@@ -1,4 +1,5 @@
 #include <InfluxDb.h>
+#include <ESP8266WiFi.h>  
 #define SensorPin A0 
 
 // Sensorwerte
@@ -8,7 +9,7 @@
 
 // WIFI
 #define WIFI_SSID "Deichert_IOT"
-#define WIFI_PASSWORD "Password"
+#define WIFI_PASSWORD "PW"
 
 // InfluxDB
 #define INFLUXDB_URL "http://grafana.deichert.de:8086"
